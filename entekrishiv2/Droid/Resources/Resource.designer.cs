@@ -2997,11 +2997,11 @@ namespace entekrishiv2.Droid
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f080094
-			public const int viewpager = 2131230868;
-			
 			// aapt resource value: 0x7f0800bf
 			public const int visible = 2131230911;
+			
+			// aapt resource value: 0x7f080094
+			public const int webView1 = 2131230868;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;

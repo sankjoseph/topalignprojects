@@ -1,6 +1,11 @@
 ﻿<Properties StartupConfiguration="{11467C94-00B4-45F5-BA38-5708B6570717}|Default">
-  <MonoDevelop.Ide.Workbench />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/Activities/MainActivity.cs">
+    <Files>
+      <File FileName="Droid/Activities/MainActivity.cs" Line="37" Column="13" />
+      <File FileName="iOS/Info.plist" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

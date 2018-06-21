@@ -7,7 +7,8 @@ using Android.Widget;
 using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Support.Design.Widget;
-
+using Android.Webkit;
+//test
 namespace entekrishiv2.Droid
 {
     [Activity(Label = "@string/app_name", Icon = "@mipmap/icon",
@@ -26,18 +27,15 @@ namespace entekrishiv2.Droid
             base.OnCreate(savedInstanceState);
 
             adapter = new TabsAdapter(this, SupportFragmentManager);
-            pager = FindViewById<ViewPager>(Resource.Id.viewpager);
             var tabs = FindViewById<TabLayout>(Resource.Id.tabs);
-            pager.Adapter = adapter;
-            tabs.SetupWithViewPager(pager);
-            pager.OffscreenPageLimit = 3;
 
-            pager.PageSelected += (sender, args) =>
-            {
-                var fragment = adapter.InstantiateItem(pager, args.Position) as IFragmentVisible;
+            WebView webView1 = FindViewById<WebView>(Resource.Id.webView1);
 
-                fragment?.BecameVisible();
-            };
+            webView1.LoadUrl("http://jasminbooks.com/test/entekrishi/entekrishi_05_06_2018/");
+       
+            webView1.SetWebViewClient(new WebViewClientClass());  
+
+
 
             Toolbar.MenuItemClick += (sender, e) =>
             {
@@ -54,6 +52,8 @@ namespace entekrishiv2.Droid
             MenuInflater.Inflate(Resource.Menu.top_menus, menu);
             return base.OnCreateOptionsMenu(menu);
         }
+
+
     }
 
     class TabsAdapter : FragmentStatePagerAdapter
@@ -82,4 +82,15 @@ namespace entekrishiv2.Droid
 
         public override int GetItemPosition(Java.Lang.Object frag) => PositionNone;
     }
+
+
+    internal class WebViewClientClass : WebViewClient  
+    {  
+        //Give the host application a chance to take over the control when a new URL is about to be loaded in the current WebView.  
+        public override bool ShouldOverrideUrlLoading(WebView view, string url)  
+        {  
+            view.LoadUrl(url);  
+            return true;  
+        }  
+    }  
 }
