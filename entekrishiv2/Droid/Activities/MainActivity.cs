@@ -8,7 +8,7 @@ using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Support.Design.Widget;
 using Android.Webkit;
-//test
+//test//test2
 namespace entekrishiv2.Droid
 {
     [Activity(Label = "@string/app_name", Icon = "@mipmap/icon",
