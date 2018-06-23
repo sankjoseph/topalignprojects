@@ -31,20 +31,18 @@ namespace entekrishiv2.Droid
 
             WebView webView1 = FindViewById<WebView>(Resource.Id.webView1);
 
+            WebSettings websettings = webView1.Settings;
+
+            websettings.JavaScriptEnabled = true;
+
             webView1.LoadUrl("http://jasminbooks.com/test/entekrishi/entekrishi_05_06_2018/");
-       
+      
+            //webView1.LoadUrl("http://entekrishi.com/");
+
+
+
             webView1.SetWebViewClient(new WebViewClientClass());  
 
-
-
-            Toolbar.MenuItemClick += (sender, e) =>
-            {
-                var intent = new Intent(this, typeof(AddItemActivity)); ;
-                StartActivity(intent);
-            };
-
-            SupportActionBar.SetDisplayHomeAsUpEnabled(false);
-            SupportActionBar.SetHomeButtonEnabled(false);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
